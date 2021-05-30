@@ -11,9 +11,9 @@
 
 # PATHS ######## adjust these paths to your computer 
 # gf-ud location:
-PATHGF=~/Documents/MASTER/THESIS/GF/gf-ud
+PATHGF=absolute_path_to/gf-ud
 # udpipe location:
-CALLUDPIPE=~/Documents/MASTER/THESIS/GF/udpipe/src/udpipe # or only 'udpipe' if you have the command
+CALLUDPIPE=absolute_path_to/udpipe/src/udpipe # or only 'udpipe' if you have the command
 # udpipe script for evaluation
 UDEVAL=./conll17_ud_eval.py
 # location of python script that trims tbs:
@@ -24,7 +24,7 @@ PATHOUT=./data_aux
 ACCUFILE=${PATHOUT}/results.csv
 # Gold treebank to use as default, name and location:
 GOLD_NAME_DEFAULT=ewt
-GOLD_DEFAULT=./data_source/en_ewt-ud-test.conllu
+GOLD_DEFAULT=./data_source/GOLDTB.conllu
 
 ## parse in-line arguments
 corpus=$1   # name of corpus

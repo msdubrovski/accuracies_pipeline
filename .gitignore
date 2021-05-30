@@ -1,1 +1,8 @@
-conll17_ud_eval.py
+*
+!.gitignore
+!README.md
+!flowchat.jpg
+!data_aux/results.csv
+!pipeline_gold.sh
+!trim_conllu.py
+

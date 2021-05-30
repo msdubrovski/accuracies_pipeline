@@ -3,8 +3,8 @@ This repository consists of the basic scripts needed to compute accuracy between
 
 ### Contents:
 - `pipepine_gold.sh` : main script
-- `trim_goldenfile.py` : auxiliary script used by the latter.
-- `data_source/` : dafualt folder for storing source TB
+- `trim_conllu.py` : auxiliary script used by the latter.
+- `data_source/` : dafault folder for storing source TB.
     
 - `data_aux/` : default folder for storing outputs.
     - `results.csv`: file to store results of each run of the pipeline. Contains a header with "name;corpus;size;gold;test_ud;gold_ud;_" as the results are stored in this fashion.
@@ -20,9 +20,7 @@ Uses gf-ud, udpipe and a python scripts.
 Bash script that computes accuracy of a UD-Treebank, against a gold standard. The script trims, trains a udpipe parser, tests and evalutates the treebank against a gold standard.
 
 ### Requisites
-Uses gf-ud, udpipe and two python scripts.
-- `gf-ud` is available at https://github.com/GrammaticalFramework/gf-ud
-- `udpipe` is available at https://github.com/ufal/udpipe
+Uses gf-ud, udpipe and two python scripts:
 - `trim_conllu.py` is a Python script that trims treebanks to a required number of trees. It is part of this repo and it is documented below.
 - `conll17_ud_eval.py` is part of https://github.com/ufal/conll2017, a collection of python scripts made available for working with UD-treebanks. This file computes the LAS accuracy, as defined in CoNLL17 UD Shared Task evaluation metrics.
 

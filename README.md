@@ -4,13 +4,12 @@ This repository consists of the basic scripts needed to compute accuracy between
 ### Contents:
 - `pipepine_gold.sh` : main script
 - `trim_conllu.py` : auxiliary script used by the latter.
-- `data_source/` : folder for storing source TB, (keeps everything neat).
-    
+- `data_source/` : folder for storing source TB (keeps everything neat).
 - `data_aux/` : default folder for storing outputs.
     - `results.csv`: file to store results of each run of the pipeline. Contains a header with "name;corpus;size;gold;test_ud;gold_ud" as the results are stored in this fashion.
 
 ### Requisites
-Uses gf-ud, udpipe and a python scripts.
+Uses gf-ud, udpipe and python scripts.
 - `gf-ud` is available at https://github.com/GrammaticalFramework/gf-ud
 - `udpipe` is available at https://github.com/ufal/udpipe
 - `conll17_ud_eval.py` is part of https://github.com/ufal/conll2017, a collection of python scripts made available for working with UD-treebanks. This file computes the LAS accuracy, as defined in CoNLL17 UD Shared Task evaluation metrics.
@@ -49,10 +48,9 @@ The last variable of the preamble is `NAME`, a common name for all intermediary 
 
 ### Examples of Use
 > `$ bash pipeline_gold.sh gfwn data_source/wordnet-train.conllu 10`
->`#########################################
-            --- Starting pipe with 10 trees, from corpus gfwn`
-
-> `--- Results for corpus gfwn (auxfiles-gfwn_10`
+>`--- Starting pipe with 10 trees, from corpus gfwn`
+`[...]`
+> `--- Results for corpus gfwn (auxfiles-gfwn_10)`
 
 > `acc UD on test = 30.09`
 

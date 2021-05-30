@@ -11,20 +11,20 @@
 
 # PATHS ######## adjust these paths to your computer 
 # gf-ud location:
-PATHGF=~/Documents/MASTER/THESIS/GF/gf-ud
+PATHGF=path_to/gf-ud
 # udpipe location:
-CALLUDPIPE=~/Documents/MASTER/THESIS/GF/udpipe/src/udpipe # or only 'udpipe' if you have the command
+CALLUDPIPE=path_to/udpipe/src/udpipe # or only 'udpipe' if you have the command
 # udpipe script for evaluation
-UDEVAL=./conll17_ud_eval.py
+UDEVAL=path_to/accuracies_pipeline/conll17_ud_eval.py
 # location of python script that trims tbs:
-PYFILE=./trim_conllu.py 
+PYFILE=path_to/accuracies_pipeline//trim_conllu.py 
 # where to store the files created in this script: # maybe this could be another command line argument??
-PATHOUT=/data_aux
+PATHOUT=path_to/accuracies_pipeline//data_aux
 # file to store results
 ACCUFILE=${PATHOUT}/results.csv
 # Gold treebank to use as default, name and location:
 GOLD_NAME_DEFAULT=ewt
-GOLD_DEFAULT=./data_source/en_ewt-ud-test.conllu
+GOLD_DEFAULT=path_to/accuracies_pipeline/data_source/en_ewt-ud-test.conllu
 
 ## creates a name:
 NAME=auxfiles-${corpus}_${N}
@@ -54,8 +54,7 @@ python3 $PYFILE $train $N $PATHOUT/$NAME-TB.conllu
 cat $PATHOUT/$NAME-TB.conllu | $CALLUDPIPE --tokenizer none --tagger none --train $PATHOUT/$NAME.udpipe
 ## test parser
 #-- cat  <testfile>.conllu | udpipe --parse <parser>.udpipe ><nameofparsedfile>.conllu
-#test="${train/train/test}" #replaces 'train' with 'test' in the name of file
-test=data_source/wordnet-test.conllu
+test="${train/train/test}" #replaces 'train' with 'test' in the name of file
 # on test corpus 
 cat $test | $CALLUDPIPE --parse $PATHOUT/$NAME.udpipe >$PATHOUT/$NAME-test-parsed.conllu
 # on gold corpus

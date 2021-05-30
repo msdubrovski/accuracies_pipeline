@@ -11,23 +11,20 @@
 
 # PATHS ######## adjust these paths to your computer 
 # gf-ud location:
-PATHGF=path_to/gf-ud
+PATHGF=~/Documents/MASTER/THESIS/GF/gf-ud
 # udpipe location:
-CALLUDPIPE=path_to/udpipe/src/udpipe # or only 'udpipe' if you have the command
+CALLUDPIPE=~/Documents/MASTER/THESIS/GF/udpipe/src/udpipe # or only 'udpipe' if you have the command
 # udpipe script for evaluation
-UDEVAL=path_to/accuracies_pipeline/conll17_ud_eval.py
+UDEVAL=./conll17_ud_eval.py
 # location of python script that trims tbs:
-PYFILE=path_to/accuracies_pipeline//trim_conllu.py 
+PYFILE=./trim_conllu.py 
 # where to store the files created in this script: # maybe this could be another command line argument??
-PATHOUT=path_to/accuracies_pipeline//data_aux
+PATHOUT=./data_aux
 # file to store results
 ACCUFILE=${PATHOUT}/results.csv
 # Gold treebank to use as default, name and location:
 GOLD_NAME_DEFAULT=ewt
-GOLD_DEFAULT=path_to/accuracies_pipeline/data_source/en_ewt-ud-test.conllu
-
-## creates a name:
-NAME=auxfiles-${corpus}_${N}
+GOLD_DEFAULT=./data_source/en_ewt-ud-test.conllu
 
 ## parse in-line arguments
 corpus=$1   # name of corpus
@@ -41,6 +38,9 @@ else
     gold_name=$4    # if provided, gold name
     gold=$5         # if provided, gold file location
 fi
+
+## creates a name for auxiliary files:
+NAME=auxfiles-${corpus}_${N}
 
 ################ Pipeline ##########################
 echo " ###################################################################

@@ -1,13 +1,13 @@
 # Accuracies Pipeline
-This repository consists of the basic scripts needed to compute accuracy between UD-Treebanks (TB), in terms of the accuracy that a parser trained on the TB attains when parsing a golden standard (as defined in Master Thesis "LABEL DISTRIBUTION IN DEPENDENCY TREEBANKS and its Impact on the Quality of Trained Parsers" by Elena R. Raposo)
+This repository consists of the basic scripts needed to compute accuracy between UD-Treebanks (TB), in terms of the accuracy that a parser trained on the TB attains when parsing a golden standard (as defined in the Master Thesis "Label Distribution in Dependency Treebanks and its Impact on the Quality of Trained Parsers" by Elena R. Raposo)
 
 ### Contents:
 - `pipepine_gold.sh` : main script
 - `trim_conllu.py` : auxiliary script used by the latter.
-- `data_source/` : dafault folder for storing source TB.
+- `data_source/` : folder for storing source TB, (keeps everything neat).
     
 - `data_aux/` : default folder for storing outputs.
-    - `results.csv`: file to store results of each run of the pipeline. Contains a header with "name;corpus;size;gold;test_ud;gold_ud;_" as the results are stored in this fashion.
+    - `results.csv`: file to store results of each run of the pipeline. Contains a header with "name;corpus;size;gold;test_ud;gold_ud" as the results are stored in this fashion.
 
 ### Requisites
 Uses gf-ud, udpipe and a python scripts.

@@ -2,7 +2,7 @@
 !.gitignore
 !README.md
 !flowchat.jpg
-!data_aux/results.csv
+!data_source/results.csv
 !pipeline_gold.sh
 !trim_conllu.py
 

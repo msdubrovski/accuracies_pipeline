@@ -47,14 +47,33 @@ The last variable of the preamble is `NAME`, a common name for all intermediary 
 - `(<gold_name>)` and `(<gold>)` : (optional) name and path of gold treebank to compare against. If none, uses default, as specified above.
 
 ### Examples of Use
+Compute accuracies for wordnet (a TB stored at data_source/) with just 10 trees:
 > `$ bash pipeline_gold.sh gfwn data_source/wordnet-train.conllu 10`
+
 >`--- Starting pipe with 10 trees, from corpus gfwn`
+
 `[...]`
+
 > `--- Results for corpus gfwn (auxfiles-gfwn_10)`
 
 > `acc UD on test = 30.09`
 
 > `acc UD on gold = 8.32`
+
+(Accuracies are understandably low)
+
+Compute accuracies for an English TB of 80 trees, against a Spanish TB, but try to set size of 1000 trees (uses all available trees):
+>`$ bash pipeline_gold.sh pud-en data_source/pud-en_100-train.conllu 1000 pud-es data_source/es_pud-ud-test.conllu`
+
+>`--- Starting pipe with 1000 trees, from corpus pud-en`
+
+>`Obs! fewer senteces than 1000`
+
+`[...]`
+
+> `acc UD on test = 69.33`
+
+> `acc UD on gold = 46.36`
 
 ### Steps
 To compute the accuracy of a TB, the pipeline needs to trim, train, test and evaluate. These steps are depicted in the following flow chart:
@@ -73,12 +92,19 @@ Simple script that selects N sentences from a conllu file. The selection could b
 
 Requires python package _conllu_ (https://pypi.org/project/conllu/)
 
-Usage:
+### Usage:
 > `python3 trim_conllu.py <infile> <size> <outfile> (-r) (-s)`
 
 - `infile` : input file.
 - `size` :
 - `outfile` : name to give output file. 
 - `-r` or `--randomness` : whether to choose sentences randomly, default False.
-- `-s` or `--splits`: whether to split file into train and test. Size becomes size of train, outfile name of train file. Default False.
+- `-s` or `--splits`: whether to split file into train and test. Size becomes size of train, outfile name of train file (test is 20% of train size). Default False.
 
+### Examples of Use:
+Let us use the script to create train and test files, of size 80 and 20.
+> `python3 trim_conllu.py data_source/en_pud-ud-test.conllu 80 data_source/pud-en_100-train.conllu -s`
+
+> `saving to data_source/pud-en_100-train.conllu`
+
+> `Done.`

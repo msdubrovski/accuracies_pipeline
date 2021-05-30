@@ -3,6 +3,6 @@
 !README.md
 !flowchat.jpg
 !data_source/results.csv
-!pipeline_gold.sh
+pipeline_gold.sh
 !trim_conllu.py
 

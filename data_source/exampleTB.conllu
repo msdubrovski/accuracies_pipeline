@@ -1,0 +1,23 @@
+1	United	_	PROPN	_	_	2	compound	_	_
+2	States	_	PROPN	_	_	3	compound	_	_
+3	troops	_	NOUN	_	_	5	nsubj	_	_
+4	now	_	ADV	_	_	5	advmod	_	_
+5	carry	_	VERB	_	_	0	root	_	_
+6	atropine	_	NOUN	_	_	5	obj	_	_
+7	and	_	CCONJ	_	_	8	cc	_	_
+8	autoinjectors	_	NOUN	_	_	6	conj	_	_
+9	in	_	ADP	_	_	13	case	_	_
+10	their	_	PRON	_	_	13	nmod:poss	_	_
+11	first	_	ADJ	_	_	12	compound	_	_
+12	aid	_	NOUN	_	_	13	compound	_	_
+13	kits	_	NOUN	_	_	5	obl	_	_
+14	to	_	PART	_	_	15	mark	_	_
+15	use	_	VERB	_	_	5	advcl	_	_
+16	in	_	ADP	_	_	17	case	_	_
+17	case	_	NOUN	_	_	15	obl	_	_
+18	of	_	ADP	_	_	22	case	_	_
+19	organophosphate	_	NOUN	_	_	20	compound	_	_
+20	nerve	_	NOUN	_	_	21	compound	_	_
+21	agent	_	NOUN	_	_	22	compound	_	_
+22	poisoning	_	NOUN	_	_	17	nmod	_	_
+									
